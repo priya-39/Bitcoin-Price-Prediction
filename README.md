@@ -233,10 +233,7 @@ Bitcoin-Price-Prediction/
 │
 ├── data/
 │   └── BTC-USD-Price-History.csv
-│
-├── results/
-│   └── README.md
-│
+
 ├── README.md
 ├── requirements.txt
 └── .gitignore
@@ -352,5 +349,3 @@ MSc Computer Science – Big Data Analytics
 ## ⭐ Acknowledgements
 
 The project uses historical Bitcoin market data for academic and analytical purposes.
-
-If you find this project useful, consider giving the repository a ⭐.
