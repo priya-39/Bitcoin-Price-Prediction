@@ -232,7 +232,7 @@ Bitcoin-Price-Prediction/
 ├── Bitcoin_prediction.ipynb
 │
 ├── data/
-│   └── BTC-USD-Price-History-2010-2024.csv
+│   └── BTC-USD-Price-History.csv
 │
 ├── results/
 │   └── README.md
