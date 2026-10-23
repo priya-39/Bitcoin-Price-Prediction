@@ -249,7 +249,7 @@ Bitcoin-Price-Prediction/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/Bitcoin-Price-Prediction.git
+git clone https://github.com/priya-39/Bitcoin-Price-Prediction.git
 ```
 
 ### 2. Navigate to the project directory
