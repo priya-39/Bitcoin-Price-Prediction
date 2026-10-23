@@ -279,7 +279,7 @@ Alternatively, the notebook can be opened directly using Google Colab.
 The notebook should load the dataset using the relative path:
 
 ```python
-df = pd.read_csv('data/BTC-USD-Price-History-2010-2024.csv')
+df = pd.read_csv('data/BTC-USD-Price-History.csv')
 ```
 
 This allows the notebook to work correctly when cloned from GitHub.
