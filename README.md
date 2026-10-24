@@ -181,6 +181,35 @@ Additional metrics such as Mean Absolute Error (MAE) are also used in the notebo
 
 ---
 
+## 🏁 Results
+
+All models were evaluated on the last 20% of the data (chronological split). A naive baseline (predict today's High = yesterday's High) is included for comparison.
+
+| Model | MSE | MAE | R² |
+| --- | ---: | ---: | ---: |
+| Naive Baseline | 1.32 × 10⁶ | 705.67 | 0.9976 |
+| LSTM | 9.22 × 10⁷ | 6,716.83 | 0.8341 |
+| CatBoost (Tuned) | 1.07 × 10⁸ | 5,082.20 | 0.8077 |
+| XGBoost (Tuned) | 1.09 × 10⁸ | 4,664.29 | 0.8043 |
+| LightGBM (Tuned) | 1.12 × 10⁸ | 5,071.98 | 0.7997 |
+| LightGBM (Untuned) | 1.12 × 10⁸ | 5,043.33 | 0.7991 |
+| XGBoost (Untuned) | 1.13 × 10⁸ | 4,765.59 | 0.7974 |
+| CatBoost (Untuned) | 1.15 × 10⁸ | 5,565.26 | 0.7945 |
+| ARIMA (Untuned) | 5.73 × 10⁸ | 19,108.20 | -0.0318 |
+| ARIMA (Tuned) | 5.74 × 10⁸ | 19,099.52 | -0.0333 |
+
+### Key Findings
+
+* **No model beat the naive baseline.** Predicting yesterday's High gave R² ≈ 0.998, far higher than any trained model. Daily Bitcoin prices are highly persistent, so a one-day-lag benchmark is very hard to beat.
+* Among the trained models, **LSTM had the best R² (0.834)** and **XGBoost (Tuned) had the lowest MAE (4,664)**.
+* Hyperparameter tuning gave only small improvements for the boosting models.
+* **ARIMA performed worst** (negative R²), which suggests the fixed-order model does not capture Bitcoin's changing trend and volatility on the test period.
+* GARCH(1,1) shows significant volatility clustering: alpha = 0.154 and beta = 0.784 (both significant at the 5% level), so volatility shocks persist over time.
+
+> These are results of the models as implemented here. A natural next step is to forecast returns or price changes instead of raw price levels, since tree-based models cannot extrapolate beyond the price range seen in training.
+
+---
+
 ## 🛠️ Technologies and Libraries
 
 ### Programming Language
@@ -232,8 +261,9 @@ Bitcoin-Price-Prediction/
 ├── Bitcoin_prediction.ipynb
 │
 ├── data/
-│   └── BTC-USD-Price-History.csv
-
+│   ├── BTC-USD-Price-History.csv
+│   └── README.md
+│
 ├── README.md
 ├── requirements.txt
 └── .gitignore
