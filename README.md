@@ -271,6 +271,11 @@ Bitcoin-Price-Prediction/
 
 ---
 
+## 📓 View the Notebook
+
+If the notebook does not preview on GitHub, open it here:
+[View on nbviewer](https://nbviewer.org/github/priya-39/Bitcoin-Price-Prediction/blob/main/Bitcoin_prediction.ipynb)
+
 ## 🚀 How to Run the Project
 
 ### 1. Clone the repository
